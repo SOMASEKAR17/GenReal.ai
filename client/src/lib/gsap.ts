@@ -24,13 +24,13 @@ const gsapInit = () => {
     gsap.from(element, {
       scrollTrigger: {
         trigger: element as Element,
-        start: "top bottom-=100px",
+        start: "top bottom-=50px",
         toggleActions: "play none none none"
       },
-      y: 50,
+      y: 30,
       opacity: 0,
-      duration: 0.8,
-      delay: index * 0.1
+      duration: 0.6,
+      delay: index * 0.05
     });
   });
   
