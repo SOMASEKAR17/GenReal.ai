@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1" />
+    <meta name="description" content="CloudPeak - Advanced AI detection platform for identifying machine-generated content with unparalleled accuracy." />
+    <title>CloudPeak - Advanced AI Detection Platform</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Orbitron:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+      @keyframes dot-pulse {
+        0% {
+          box-shadow: 0 0 15px rgba(0, 227, 255, 0.7);
+        }
+        50% {
+          box-shadow: 0 0 5px rgba(0, 227, 255, 0.2);
+          background-color: rgba(0, 227, 255, 0.5);
+        }
+        100% {
+          box-shadow: 0 0 15px rgba(0, 227, 255, 0.7);
+        }
+      }
+      
+      .dot-pulse {
+        position: relative;
+        left: -9999px;
+        width: 10px;
+        height: 10px;
+        border-radius: 5px;
+        background-color: #00E3FF;
+        color: #00E3FF;
+        box-shadow: 0 0 15px rgba(0, 227, 255, 0.7);
+        animation: dot-pulse 1.5s infinite linear;
+        animation-delay: 0.25s;
+      }
+      
+      .dot-pulse::before,
+      .dot-pulse::after {
+        content: '';
+        display: inline-block;
+        position: absolute;
+        top: 0;
+        width: 10px;
+        height: 10px;
+        border-radius: 5px;
+        background-color: #00E3FF;
+        color: #00E3FF;
+        box-shadow: 0 0 15px rgba(0, 227, 255, 0.7);
+      }
+      
+      .dot-pulse::before {
+        left: -15px;
+        animation: dot-pulse 1.5s infinite linear;
+        animation-delay: 0s;
+      }
+      
+      .dot-pulse::after {
+        left: 15px;
+        animation: dot-pulse 1.5s infinite linear;
+        animation-delay: 0.5s;
+      }
+      
+      @keyframes scanline {
+        0% {
+          top: 0;
+        }
+        100% {
+          top: 100%;
+        }
+      }
+      
+      .animate-scanline {
+        animation: scanline 2s linear infinite;
+      }
+
+      :root {
+        --deep-blue: #050814;
+        --navy: #0a1128;
+        --neon-blue: #0070F3;
+        --neon-cyan: #00E3FF;
+        --dark-blue: #0F172A;
+        --dark-surface: rgba(15, 23, 42, 0.6);
+
+        --font-sans: 'Inter', sans-serif;
+        --font-orbitron: 'Orbitron', sans-serif;
+      }
+
+      .font-orbitron {
+        font-family: var(--font-orbitron);
+      }
+    </style>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+    <!-- This is a replit script which adds a banner on the top of the page when opened in development mode outside the replit environment -->
+    <script type="text/javascript" src="https://replit.com/public/js/replit-dev-banner.js"></script>
+  </body>
+</html>
