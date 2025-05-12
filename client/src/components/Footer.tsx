@@ -6,11 +6,8 @@ const Footer = () => {
           <div className="col-span-1 md:col-span-1">
             <div className="flex items-center mb-4">
               <div className="w-8 h-8 mr-2 rounded-full bg-gradient-to-r from-neon-blue to-neon-cyan flex items-center justify-center">
-                <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 text-white" viewBox="0 0 20 20" fill="currentColor">
-                  <path fillRule="evenodd" d="M10 3.5a.5.5 0 01.5.5v1a.5.5 0 01-1 0V4a.5.5 0 01.5-.5zM10 7a3 3 0 100 6 3 3 0 000-6zm-7 3a7 7 0 1114 0 7 7 0 01-14 0z" clipRule="evenodd" />
-                </svg>
               </div>
-              <span className="font-orbitron font-bold text-xl text-white">CloudPeak</span>
+              <span className="font-orbitron font-bold text-xl text-white">GenReal.ai</span>
             </div>
             <p className="text-gray-400 text-sm mb-4">
               Cutting-edge AI detection platform for identifying machine-generated content with unparalleled accuracy.

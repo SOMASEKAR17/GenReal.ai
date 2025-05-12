@@ -1,21 +1,14 @@
 import { Button } from "@/components/ui/button";
-import { useGSAP } from "@/hooks/useGSAP";
-import { useRef } from "react";
+
 
 const Hero = () => {
-  const containerRef = useRef<HTMLElement>(null);
-  
-  useGSAP(() => {}, { scope: containerRef });
+
 
   return (
-    <header ref={containerRef} className="relative pt-24 sm:pt-28 md:pt-32 pb-12 sm:pb-16 md:pb-20 overflow-hidden">
-      <div className="absolute inset-0 z-0" data-parallax="true">
-        <div className="absolute inset-0 bg-gradient-to-b from-deep-blue to-navy">
-          {/* Animated particles background would be added via GSAP */}
-        </div>
-      </div>
+    <header className="relative bg-gradient-to-b from-deep-blue to-navy pt-24 sm:pt-28 md:pt-32 pb-12 sm:pb-16 md:pb-20 overflow-hidden">
       
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      
+      <div className="container  mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="flex flex-col items-center text-center">
           <div className="w-full max-w-xs sm:max-w-lg md:max-w-2xl lg:max-w-3xl mx-auto space-y-4">
             <div className="inline-block bg-gradient-to-r from-neon-blue/20 to-neon-cyan/20 rounded-full px-3 sm:px-4 py-1.5 mb-4 sm:mb-6 reveal-element">
@@ -24,7 +17,7 @@ const Hero = () => {
               </p>
             </div>
             <h1 className="font-orbitron text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-tight mb-4 sm:mb-6 reveal-element">
-              Detect <span className="bg-clip-text text-transparent bg-gradient-to-r from-neon-blue to-neon-cyan shadow-[0_0_10px_rgba(0,227,255,0.7)]">Deepfakes</span> Instantly
+              Detect <span className="bg-clip-text text-transparent bg-gradient-to-r from-neon-blue to-neon-cyan ">Deepfakes</span> Instantly
             </h1>
             <p className="text-base sm:text-lg md:text-xl text-gray-300 mb-6 sm:mb-8 mx-auto reveal-element">
               Advanced AI-powered deepfake detection technology with unparalleled accuracy and speed.
@@ -35,9 +28,6 @@ const Hero = () => {
                 <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 sm:h-5 sm:w-5 ml-2" viewBox="0 0 20 20" fill="currentColor">
                   <path fillRule="evenodd" d="M10.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L12.586 11H5a1 1 0 110-2h7.586l-2.293-2.293a1 1 0 010-1.414z" clipRule="evenodd" />
                 </svg>
-              </Button>
-              <Button variant="outline" className="border-gray-600 hover:border-neon-cyan text-white px-4 sm:px-8 py-4 sm:py-6 hover:bg-transparent">
-                Get Pro Version
               </Button>
             </div>
           </div>

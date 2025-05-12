@@ -1,7 +1,7 @@
 import { useState, useRef } from "react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
-import { useGSAP } from "@/hooks/useGSAP";
+
 
 interface UploadSectionProps {
   onStartProcessing: () => void;
@@ -10,9 +10,8 @@ interface UploadSectionProps {
 const UploadSection = ({ onStartProcessing }: UploadSectionProps) => {
   const [activeTab, setActiveTab] = useState<'upload' | 'url'>('upload');
   const [isDragging, setIsDragging] = useState(false);
-  const containerRef = useRef<HTMLElement>(null);
   
-  useGSAP(() => {}, { scope: containerRef });
+ 
 
   const handleDragOver = (e: React.DragEvent<HTMLDivElement>) => {
     e.preventDefault();
@@ -30,12 +29,12 @@ const UploadSection = ({ onStartProcessing }: UploadSectionProps) => {
   };
 
   return (
-    <section ref={containerRef} className="py-10 sm:py-12 md:py-16 relative">
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+    <section  className="py-10 sm:py-12 md:py-16 relative">
+      <div id="model" className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="max-w-4xl mx-auto">
           <div className="text-center mb-8 sm:mb-12">
             <h2 className="font-orbitron text-2xl sm:text-3xl md:text-4xl font-bold mb-3 sm:mb-4 reveal-element">
-              Detect <span className="bg-clip-text text-transparent bg-gradient-to-r from-neon-blue to-neon-cyan shadow-[0_0_10px_rgba(0,227,255,0.7)]">Deepfakes</span> Instantly
+              Detect <span className="bg-clip-text text-transparent bg-gradient-to-r from-neon-blue to-neon-cyan ">Deepfakes</span> Instantly
             </h2>
             <p className="text-base sm:text-lg text-gray-300 max-w-2xl mx-auto reveal-element">
               Upload your video or enter a URL to analyze content with our cutting-edge AI detection algorithms.

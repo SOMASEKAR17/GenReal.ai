@@ -1,30 +1,29 @@
 import { useEffect, useRef, useState } from "react";
-import { useGSAP } from "@/hooks/useGSAP";
 import gsap from "gsap";
 
 const ProcessingSection = () => {
-  const containerRef = useRef<HTMLElement>(null);
+  const containerRef = useRef<HTMLDivElement>(null);
   const progressBarRef = useRef<HTMLDivElement>(null);
   const [progress, setProgress] = useState(0);
-  
-  useGSAP(() => {
-    // Animate progress bar
+
+  // Optional: animate width smoothly with GSAP on state change
+  useEffect(() => {
     if (progressBarRef.current) {
       gsap.to(progressBarRef.current, {
-        width: "100%",
-        duration: 3,
-        ease: "power1.inOut",
+        width: `${progress}%`,
+        duration: 0.5,
+        ease: "power1.out",
       });
     }
-  }, { scope: containerRef });
+  }, [progress]);
 
   useEffect(() => {
     const interval = setInterval(() => {
-      setProgress(prev => {
-        const newProgress = prev + (Math.random() * 15);
+      setProgress((prev) => {
+        const newProgress = prev + Math.random() * 15;
         return newProgress > 100 ? 100 : newProgress;
       });
-    }, 500);
+    }, 200);
 
     return () => clearInterval(interval);
   }, []);

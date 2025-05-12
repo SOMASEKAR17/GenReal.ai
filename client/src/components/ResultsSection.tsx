@@ -1,27 +1,10 @@
 import { Button } from "@/components/ui/button";
-import { useGSAP } from "@/hooks/useGSAP";
-import { useRef } from "react";
-import gsap from "gsap";
+
 
 const ResultsSection = () => {
-  const containerRef = useRef<HTMLElement>(null);
-  
-  useGSAP(() => {
-    // Animate result elements
-    const resultElements = containerRef.current?.querySelectorAll('.reveal-element');
-    
-    if (resultElements) {
-      gsap.from(resultElements, {
-        y: 30,
-        opacity: 0,
-        duration: 0.6,
-        stagger: 0.1,
-      });
-    }
-  }, { scope: containerRef });
 
   return (
-    <section ref={containerRef} className="py-10 sm:py-12 md:py-16">
+    <section className="py-10 sm:py-12 md:py-16">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-8 sm:mb-12 reveal-element">
@@ -29,7 +12,7 @@ const ResultsSection = () => {
               Analysis Complete
             </div>
             <h2 className="font-orbitron text-2xl sm:text-3xl md:text-4xl font-bold mb-3 sm:mb-4">
-              Deepfake <span className="bg-clip-text text-transparent bg-gradient-to-r from-neon-blue to-neon-cyan shadow-[0_0_10px_rgba(0,227,255,0.7)]">Results</span>
+              Deepfake <span className="bg-clip-text text-transparent bg-gradient-to-r from-neon-blue to-neon-cyan ">Results</span>
             </h2>
             <p className="text-base sm:text-lg text-gray-300 max-w-2xl mx-auto">
               Our advanced algorithms have analyzed your video with high precision.

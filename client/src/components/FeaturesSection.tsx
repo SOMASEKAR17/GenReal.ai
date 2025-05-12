@@ -1,11 +1,7 @@
-import { useGSAP } from "@/hooks/useGSAP";
-import { useRef } from "react";
+import React from 'react';
+
 
 const FeaturesSection = () => {
-  const containerRef = useRef<HTMLElement>(null);
-  
-  useGSAP(() => {}, { scope: containerRef });
-
   const features = [
     {
       icon: (
@@ -70,24 +66,24 @@ const FeaturesSection = () => {
   ];
 
   return (
-    <section ref={containerRef} id="features" className="py-20 relative">
+    <section  id="features" className="py-20 relative">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="text-center mb-16">
           <h2 className="font-orbitron text-3xl sm:text-4xl font-bold mb-4 reveal-element">
-            Advanced <span className="bg-clip-text text-transparent bg-gradient-to-r from-neon-blue to-neon-cyan shadow-[0_0_10px_rgba(0,227,255,0.7)]">Features</span>
+            Advanced <span className="bg-clip-text text-transparent bg-gradient-to-r from-neon-blue to-neon-cyan">Features</span>
           </h2>
           <p className="text-lg text-gray-300 max-w-2xl mx-auto reveal-element">
             Our platform leverages cutting-edge technology to provide the most accurate AI detection available.
           </p>
         </div>
         
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 reveal-element md:grid-cols-2 lg:grid-cols-3 gap-8">
           {features.map((feature, index) => (
             <div 
               key={index}
-              className="bg-dark-surface/40 backdrop-blur-md border border-gray-700 rounded-xl p-6 transform transition-all duration-500 hover:-translate-y-2 hover:shadow-[0_0_15px_rgba(0,112,243,0.7)] reveal-element"
+              className="bg-dark-surface/40 backdrop-blur-md border  border-gray-700 rounded-xl p-6 transform transition-all duration-500 hover:-translate-y-2 hover:shadow-[0_0_15px_rgba(0,112,243,0.7)]"
             >
-              <div className={`w-12 h-12 rounded-full bg-${feature.color === 'blue' ? 'neon-blue' : 'neon-cyan'}/20 flex items-center justify-center mb-6`}>
+              <div className={`w-12 h-12  rounded-full bg-${feature.color === 'blue' ? 'neon-blue' : 'neon-cyan'}/20 flex items-center justify-center mb-6`}>
                 {feature.icon}
               </div>
               <h3 className="text-xl font-bold mb-3">{feature.title}</h3>
